@@ -1,0 +1,15 @@
+#app {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar content content"
+    "sidebar content content";
+  grid-template-columns: 20rem repeat(2, auto);
+}
+
+#wrapper-content {
+  grid-area: content;
+  padding: var(--size10) var(--size10);
+  color: var(--white);
+}
