@@ -15,7 +15,7 @@ class Header extends Component {
             <header className="header-wrapper">
                 <div className="logo">
                     <i className="lni lni-stackoverflow"></i>
-                    <div className="ml-2">MEDIA APP</div>
+                    <div className="ml-2">MEDIA APP XXX</div>
                     <div className="caret-feature" onClick={this.clickCaretFeature}><i class="lni lni-chevron-down"></i></div>
                 </div>
                 <div className="feature">
