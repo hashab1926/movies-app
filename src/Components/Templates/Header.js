@@ -1,14 +1,22 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
+import { eventBindings } from '../../Helpers/Events';
+import ControllerHeader from './ControllerHeader';
 // import imgProfile from '../../../public/img/myphoto.jpeg';
 class Header extends Component {
+
+    constructor() {
+        super();
+        eventBindings(this, ['clickCaretFeature'])
+    }
     render() {
         return (
             <header className="header-wrapper">
                 <div className="logo">
                     <i className="lni lni-stackoverflow"></i>
                     <div className="ml-2">MEDIA APP</div>
+                    <div className="caret-feature" onClick={this.clickCaretFeature}><i class="lni lni-chevron-down"></i></div>
                 </div>
                 <div className="feature">
                     <div className="form-search">
