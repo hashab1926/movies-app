@@ -10,6 +10,12 @@
   .caret-feature {
     display: none;
   }
+  > .logo > .hamburger-menu {
+    position: absolute;
+    left: 20px;
+    top: 2rem;
+    display: none;
+  }
   > .logo {
     background-color: var(--darkred);
     width: 20rem;

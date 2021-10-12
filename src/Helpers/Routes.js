@@ -6,7 +6,7 @@ import {
 
 import Dashboard from '../Pages/Dashboard/';
 import Header from '../Components/Templates/Header';
-import Sidebar from '../Components/Templates/Sidebar';
+import Navbar from '../Components/Templates/Navbar';
 
 const ProtectedRoutes = (props) => {
     document.body.className = "bg-grey";
@@ -23,7 +23,7 @@ const Routes = () => {
     return (
         <Router>
             <Header />
-            <Sidebar />
+            <Navbar />
             <br /><br />
             <section id="wrapper-content">
                 <Switch>
