@@ -1,8 +1,17 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './sidebar.scss';
+import { eventBindings } from '../../Helpers/Events';
+import ControllerNavbar from './ControllerNavbar';
+import { hideNavbar, showNavbar } from '../../Redux/Actions';
+import { connect } from 'react-redux';
+import './navbar.scss';
 
-class Sidebar extends Component {
+class Navbar extends Component {
+    constructor() {
+        super();
+        eventBindings(this, ['clickCloseNavbar', 'detectNavbar'])
+    }
+
     render() {
         return (
             <nav className="navbar-wrapper">
@@ -15,6 +24,8 @@ class Sidebar extends Component {
                     <li><Link to="/trending"> Genres</Link></li>
 
                 </ul>
+
+                <div className="close-navbar" onClick={this.clickCloseNavbar}><i className="lni lni-close"></i></div>
             </nav>
         );
     }
@@ -25,8 +36,15 @@ class Sidebar extends Component {
         icon.className = "lni lni-arrow-right";
         icon.style = "font-size:1.8rem; font-weight:600; color:#777";
         activeItem.appendChild(icon);
+
     }
 
 }
 
-export default Sidebar;
+const mapStateToProps = state => {
+    return {
+        navbar: state.navbar
+    }
+}
+Object.assign(Navbar.prototype, ControllerNavbar);
+export default connect(mapStateToProps, { hideNavbar, showNavbar })(Navbar);

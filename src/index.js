@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import Routes from './Helpers/Routes';
 import reportWebVitals from './reportWebVitals';
 import './Assets/main.scss';
+import { Provider } from 'react-redux';
+import store from './Redux/Store';
+
 ReactDOM.render(
   <React.StrictMode>
-    <Routes />
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('app')
 );

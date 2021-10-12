@@ -3,8 +3,8 @@
   display: grid;
   grid-template-areas:
     "header header header"
-    "sidebar content content"
-    "sidebar content content";
+    "navbar content content"
+    "navbar content content";
   grid-template-columns: 20rem repeat(2, auto);
 }
 
@@ -25,11 +25,22 @@
   }
   .header-wrapper {
     z-index: 3;
+
+    > .logo > .hamburger-menu {
+      display: block;
+    }
   }
 
   .navbar-wrapper {
     z-index: 2;
     left: -20rem;
+  }
+  .navbar-wrapper.show {
+    z-index: 3;
+    left: 0;
+  }
+  .navbar-wrapper > ul {
+    padding-top: 5rem;
   }
 }
 
@@ -52,6 +63,10 @@
       position: absolute;
       top: 2rem;
       right: 20px;
+    }
+
+    > .feature.hide {
+      display: none;
     }
   }
 }
